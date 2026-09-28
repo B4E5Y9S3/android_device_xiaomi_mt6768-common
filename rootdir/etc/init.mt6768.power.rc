@@ -106,9 +106,11 @@ on enable-low-power
     write /dev/cpuctl/camera-daemon/cpu.uclamp.min 0
     write /dev/cpuctl/camera-daemon/cpu.uclamp.latency_sensitive 1
 
-    # Uclamp tuning
+    # Allow the full range of per-task and Power HAL minimum-clamp requests.
+    # This is a ceiling on uclamp.min, not a boost applied to every task.
+    write /proc/sys/kernel/sched_util_clamp_min 1024
+    # Default RT boost on the 0..1024 scheduler scale (about 9.4%).
     write /proc/sys/kernel/sched_util_clamp_min_rt_default 96
-    write /proc/sys/kernel/sched_util_clamp_min 128
 
     # Enable PowerHAL hint processing
     setprop vendor.powerhal.init 1
