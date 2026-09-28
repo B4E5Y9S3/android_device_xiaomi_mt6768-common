@@ -242,7 +242,7 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/pixel/pixelstats \
     hardware/google/pixel/power-libperfmgr \
     hardware/google/pixel/thermal \
-    hardware/lineage/interfaces/power-libperfmgr \
+    hardware/voltage/interfaces/power-libperfmgr \
     hardware/mediatek \
     hardware/mediatek/libmtkperf_client \
     hardware/xiaomi \
@@ -281,11 +281,5 @@ PRODUCT_DEX_PREOPT_GENERATE_DM_FILES := true
 # Inherit the proprietary files
 $(call inherit-product, vendor/xiaomi/mt6768-common/mt6768-common-vendor.mk)
 
-# Maintainer Name
-INFINITY_MAINTAINER := "MrShockWAVEog"
-
-# Whether the device supports Fingerprint On Display
-TARGET_HAS_UDFPS := false
-
-# Whether Including Google Apps
+# Build without bundled Google Apps
 WITH_GAPPS := false
