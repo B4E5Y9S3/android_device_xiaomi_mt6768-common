@@ -18,8 +18,6 @@ ro.mtk_cam_stereo_camera_support=1
 dalvik.vm.dex2oat64.enabled=true
 
 # Display
-ro.surface_flinger.supports_background_blur=0
-persist.sys.sf.disable_blurs=1
 config.svi.path=/system/etc/SVIConfig.xml
 debug.svi.logs=1
 debug.als.logs=1
